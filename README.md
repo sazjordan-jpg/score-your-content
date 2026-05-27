@@ -1,7 +1,6 @@
-What's new in this version:
+Use this to score your content against a set of configurable editorial principles.
 
-URL field — paste the URL and it fetches the page via the Anthropic API server-side, no CORS issues
-Editable principles — click Edit next to the principles section to update any of the four dimensions
-New scoring scale — 0–40 Rewrite required / 41–60 Internal review needed / 61–75 Good but extra work / 76–100 OK to publish
-Commentary on every dimension — not just a score, but 2–4 sentences explaining specifically why that score was given with reference to the actual page content
-Scoring scale reference card — shown on the page at all times so anyone using it can see the bands
+Enter the URL of the content, which is fetched via the Anthropic API server-side.
+Select Edit to change the principles. A default set is provided for your convenience.
+Each article is scored against a scoring scale with commentary on each dimension provided in addition to the overall score.
+The scoring scale reference card — shown on the page at all times so anyone using it can see the bands.
