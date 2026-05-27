@@ -279,7 +279,6 @@ footer{margin-top:5rem;padding-top:1.5rem;border-top:1px solid var(--rule);font-
             <th>Title</th>
             <th>Overall</th>
             <th>Band</th>
-            <th id="batchDimHeaders"></th>
           </tr>
         </thead>
         <tbody id="batchTableBody"></tbody>
@@ -502,9 +501,9 @@ function renderSingle(a,aud){
 // ── Render batch results ──────────────────────────────────────────
 function renderBatch(data,aud){
   const dimNames=principles.map(p=>p.name);
-  // Extra header cells for each dimension
-  const existingTh=document.getElementById('batchDimHeaders');
-  existingTh.outerHTML='<th>'+dimNames.join('</th><th>')+'</th>';
+  // Rebuild the entire table header safely
+  const thead=document.querySelector('.batch-table thead tr');
+  thead.innerHTML=`<th>URL</th><th>Title</th><th>Overall</th><th>Band</th>`+dimNames.map(n=>`<th>${n}</th>`).join('');
  
   document.getElementById('batchTableBody').innerHTML=data.map(item=>{
     if(item.status==='error'){
