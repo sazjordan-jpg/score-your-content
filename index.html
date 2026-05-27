@@ -22,79 +22,80 @@
   --shadow:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04);
   --shadow-lg:0 4px 20px rgba(0,0,0,.08),0 1px 4px rgba(0,0,0,.04);
 }
- 
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height:100vh;font-size:15px;line-height:1.65}
- 
-/* Layout */
-.wrap{max-width:820px;margin:0 auto;padding:0 1.5rem 6rem}
- 
-/* Header */
+.wrap{max-width:900px;margin:0 auto;padding:0 1.5rem 6rem}
 .site-header{padding:2.5rem 0 2rem;border-bottom:1px solid var(--rule);margin-bottom:2.5rem;display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .brand{font-family:var(--serif);font-size:2.4rem;color:var(--forest);letter-spacing:-0.01em;line-height:1;font-weight:500}
 .brand em{font-style:italic;color:var(--forest-mid)}
-.strapline{font-size:13px;color:var(--muted);max-width:380px;line-height:1.6;padding-bottom:2px}
- 
-/* Principles strip */
-.principles-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-bottom:2.5rem}
-.p-chip{background:var(--cream);border:1px solid var(--rule);border-radius:var(--r);padding:.75rem 1rem;transition:border-color .15s}
-.p-chip:hover{border-color:var(--rule-strong)}
+.strapline{font-size:13px;color:var(--muted);max-width:400px;line-height:1.6;padding-bottom:2px}
+.principles-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-bottom:2rem}
+.p-chip{background:var(--cream);border:1px solid var(--rule);border-radius:var(--r);padding:.75rem 1rem}
 .p-chip-name{font-size:10px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
 .p-chip-desc{font-size:12px;color:var(--ink);line-height:1.45;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
- 
-/* Cards */
+.scale-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-bottom:2rem}
+.scale-chip{padding:.625rem .875rem;border-radius:var(--r);border:1px solid}
+.scale-chip-range{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}
+.scale-chip-label{font-size:13px;font-weight:500}
 .card{background:var(--cream);border:1px solid var(--rule);border-radius:var(--r-xl);padding:2rem 2.25rem;margin-bottom:1.25rem;box-shadow:var(--shadow)}
 .card-title{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--ink);margin-bottom:1.75rem;line-height:1.2}
 .card-title em{font-style:italic;color:var(--forest)}
  
-/* Form elements */
+/* Tabs */
+.tabs{display:flex;gap:2px;border-bottom:1px solid var(--rule);margin-bottom:1.5rem}
+.tab-btn{font-family:var(--sans);font-size:13px;color:var(--muted);background:none;border:none;border-bottom:2px solid transparent;padding:8px 16px 10px;cursor:pointer;transition:color .15s,border-color .15s;margin-bottom:-1px}
+.tab-btn.active{color:var(--forest);border-bottom-color:var(--forest);font-weight:500}
+.tab-panel{display:none}.tab-panel.active{display:block}
+ 
 .field{margin-bottom:1.25rem}
-.field:last-of-type{margin-bottom:0}
 .label{display:block;font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
-.label-opt{font-weight:300;text-transform:none;letter-spacing:0;color:var(--ghost);font-size:11px}
 input[type=text],input[type=url],textarea{width:100%;font-family:var(--sans);font-size:14px;color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:var(--r);padding:11px 14px;outline:none;transition:border-color .2s,background .2s,box-shadow .2s;resize:vertical;line-height:1.5}
 input[type=text]:focus,input[type=url]:focus,textarea:focus{border-color:var(--forest-mid);background:var(--cream);box-shadow:0 0 0 3px rgba(28,56,40,.08)}
 input.err,textarea.err{border-color:var(--rose);box-shadow:0 0 0 3px rgba(106,24,24,.08)}
 .hint{font-size:12px;color:var(--ghost);margin-top:5px;line-height:1.55}
 .key-row{display:flex;gap:8px;align-items:flex-start}
 .key-row input{flex:1}
-.key-link{font-size:12px;color:var(--forest-mid);text-decoration:none;white-space:nowrap;padding-top:12px;transition:color .15s}
-.key-link:hover{color:var(--forest);text-decoration:underline}
- 
-/* Principles editor */
+.key-link{font-size:12px;color:var(--forest-mid);text-decoration:none;white-space:nowrap;padding-top:12px}
+.key-link:hover{text-decoration:underline}
+.worker-row{display:flex;gap:8px;align-items:flex-start}
+.worker-row input{flex:1}
 .pe-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
 .pe-header .label{margin:0}
 .pe-actions{display:flex;gap:5px}
 .pe-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
-.pe-mini{background:var(--paper);border:1px solid var(--rule);border-radius:var(--r);padding:.75rem;cursor:pointer;transition:border-color .15s}
-.pe-mini:hover{border-color:var(--rule-strong)}
+.pe-mini{background:var(--paper);border:1px solid var(--rule);border-radius:var(--r);padding:.75rem}
 .pe-mini-name{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
 .pe-mini-desc{font-size:12px;color:var(--ink);line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 .pe-expanded{margin-top:10px;display:none;flex-direction:column;gap:8px}
 .pe-row{background:var(--paper);border:1px solid var(--rule);border-radius:var(--r);padding:.875rem;display:grid;grid-template-columns:1fr 2fr;gap:10px;align-items:start}
 .pe-row input{font-size:13px;font-weight:500;padding:8px 10px;background:var(--cream)}
 .pe-row textarea{font-size:13px;padding:8px 10px;background:var(--cream);min-height:72px}
- 
-/* Buttons */
 .btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-size:13px;font-weight:400;color:var(--muted);background:transparent;border:1px solid var(--rule);border-radius:var(--r);padding:6px 14px;cursor:pointer;transition:all .15s;white-space:nowrap}
 .btn:hover{background:var(--paper);color:var(--ink);border-color:var(--rule-strong)}
-.btn-primary{background:var(--forest);color:#fff;border-color:var(--forest);font-size:14px;font-weight:500;padding:12px 28px;border-radius:var(--r);letter-spacing:.01em}
+.btn-primary{background:var(--forest);color:#fff;border-color:var(--forest);font-size:14px;font-weight:500;padding:12px 28px;border-radius:var(--r)}
 .btn-primary:hover{background:var(--forest-mid);border-color:var(--forest-mid)}
 .btn-primary:active{transform:scale(.98)}
 .btn-primary:disabled{opacity:.38;cursor:not-allowed;transform:none}
 .btn-row{display:flex;align-items:center;gap:10px;margin-top:1.75rem;flex-wrap:wrap}
- 
-/* Status */
 .status{display:none;font-size:13px;padding:12px 16px;border-radius:var(--r);border:1px solid var(--rule);background:var(--paper);color:var(--muted);margin-top:1rem;line-height:1.55}
 .status.err{color:var(--rose);border-color:var(--rose-border);background:var(--rose-light)}
 .status.info{color:var(--forest);border-color:var(--forest-border);background:var(--forest-light)}
 .spin{display:inline-block;width:13px;height:13px;border:2px solid var(--rule-strong);border-top-color:var(--forest);border-radius:50%;animation:spin .65s linear infinite;vertical-align:-2px;margin-right:7px}
 @keyframes spin{to{transform:rotate(360deg)}}
  
+/* Batch progress */
+.progress-list{display:flex;flex-direction:column;gap:6px;margin-top:1rem}
+.progress-item{display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--cream);border:1px solid var(--rule);border-radius:var(--r);font-size:13px}
+.progress-item .pi-url{flex:1;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px}
+.progress-item .pi-status{flex-shrink:0;font-size:11px;font-weight:500;padding:2px 8px;border-radius:20px;border:1px solid}
+.pi-waiting{color:var(--ghost);border-color:var(--rule);background:var(--paper)}
+.pi-running{color:var(--forest);border-color:var(--forest-border);background:var(--forest-light)}
+.pi-done{color:var(--jade);border-color:var(--jade-border);background:var(--jade-light)}
+.pi-error{color:var(--rose);border-color:var(--rose-border);background:var(--rose-light)}
+ 
 /* Results */
 #results{display:none;animation:fadeUp .4s ease}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
- 
 .res-hero{background:var(--cream);border:1px solid var(--rule);border-radius:var(--r-xl);padding:2rem 2.25rem;margin-bottom:1.25rem;box-shadow:var(--shadow-lg);display:flex;gap:2rem;align-items:flex-start;flex-wrap:wrap}
 .res-hero-left{flex:1;min-width:200px}
 .res-url{font-size:12px;color:var(--muted);margin-bottom:6px;word-break:break-all}
@@ -103,51 +104,48 @@ input.err,textarea.err{border-color:var(--rose);box-shadow:0 0 0 3px rgba(106,24
 .res-title{font-family:var(--serif);font-size:2rem;font-weight:500;line-height:1.2;color:var(--ink);margin-bottom:1rem;font-style:italic}
 .res-audience{display:inline-flex;align-items:flex-start;gap:7px;background:var(--forest-light);border:1px solid var(--forest-border);border-radius:var(--r);padding:7px 11px;font-size:13px;color:var(--forest);line-height:1.5}
 .res-audience svg{flex-shrink:0;margin-top:2px;width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
- 
 .overall-badge{flex-shrink:0;text-align:center;border-radius:var(--r-lg);padding:1.25rem 1.5rem;min-width:110px;border:1px solid}
 .overall-badge .ob-score{font-family:var(--serif);font-size:3.5rem;line-height:1;font-weight:600;margin-bottom:4px}
 .overall-badge .ob-label{font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;line-height:1.3}
-.overall-badge .ob-band{font-size:11px;opacity:.7;margin-top:3px;font-style:italic}
- 
-/* Score grid */
 .score-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:1.25rem}
 .sc{background:var(--cream);border:1px solid var(--rule);border-radius:var(--r-lg);padding:1rem 1.25rem;text-align:center;box-shadow:var(--shadow)}
 .sc-label{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
 .sc-num{font-family:var(--serif);font-size:2.2rem;line-height:1;margin-bottom:4px;font-weight:500}
 .sc-band{font-size:10px;font-weight:500;letter-spacing:.05em;text-transform:uppercase}
- 
-/* Dim cards */
 .dim{background:var(--cream);border:1px solid var(--rule);border-radius:var(--r-lg);padding:1.5rem 1.75rem;margin-bottom:10px;box-shadow:var(--shadow)}
 .dim-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
 .dim-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .dim-icon svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .dim-name{font-size:15px;font-weight:500;flex:1;color:var(--ink)}
-.dim-name small{font-size:12px;font-weight:400;color:var(--muted);margin-left:4px}
 .dim-badge{font-size:12px;font-weight:500;padding:4px 12px;border-radius:20px;flex-shrink:0;border:1px solid}
 .bar-track{height:3px;background:var(--paper);border-radius:2px;margin-bottom:14px;overflow:hidden}
 .bar-fill{height:3px;border-radius:2px;transition:width .9s cubic-bezier(.16,1,.3,1)}
- 
 .dim-score-row{display:flex;align-items:baseline;gap:8px;margin-bottom:10px}
 .dim-score-num{font-family:var(--serif);font-size:2rem;font-weight:500;line-height:1}
 .dim-score-band{font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:2px 9px;border-radius:20px;border:1px solid}
- 
 .dim-section{margin-bottom:12px}
 .dim-section-label{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
 .dim-commentary{font-size:14px;color:var(--ink);line-height:1.65}
 .dim-suggestion{font-size:13px;color:var(--muted);line-height:1.6;display:flex;gap:7px;align-items:flex-start;padding:10px 12px;background:var(--paper);border-radius:var(--r);border:1px solid var(--rule)}
 .dim-suggestion svg{flex-shrink:0;margin-top:2px;width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
- 
-/* Rec */
 .rec-card{background:var(--forest);color:#fff;border-radius:var(--r-xl);padding:1.75rem 2.25rem;margin-top:1.25rem;box-shadow:var(--shadow-lg)}
 .rec-label{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;opacity:.55;margin-bottom:10px}
 .rec-text{font-family:var(--serif);font-size:1.2rem;font-style:italic;line-height:1.7;opacity:.92;font-weight:400}
  
-/* Band colours */
+/* Batch results table */
+.batch-results{margin-top:1.5rem}
+.batch-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--cream);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow)}
+.batch-table th{background:var(--forest);color:#fff;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:10px 14px;text-align:left}
+.batch-table td{padding:10px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+.batch-table tr:last-child td{border-bottom:none}
+.batch-table tr:hover td{background:var(--paper)}
+.batch-url{color:var(--forest-mid);text-decoration:none;word-break:break-all;font-size:12px}
+.batch-url:hover{text-decoration:underline}
+ 
 .c-rewrite{color:var(--rose)}.bg-rewrite{background:var(--rose-light);border-color:var(--rose-border)}.bar-rewrite{background:#C03030}.icon-rewrite{background:var(--rose-light);color:var(--rose)}
 .c-review{color:var(--amber)}.bg-review{background:var(--amber-light);border-color:var(--amber-border)}.bar-review{background:#C07A00}.icon-review{background:var(--amber-light);color:var(--amber)}
 .c-good{color:#3A6B20}.bg-good{background:#F0F7EB;border-color:#B8D8A0}.bar-good{background:#4A8A28}.icon-good{background:#F0F7EB;color:#3A6B20}
 .c-publish{color:var(--jade)}.bg-publish{background:var(--jade-light);border-color:var(--jade-border)}.bar-publish{background:#2D7A4A}.icon-publish{background:var(--jade-light);color:var(--jade)}
- 
 footer{margin-top:5rem;padding-top:1.5rem;border-top:1px solid var(--rule);font-size:12px;color:var(--ghost);text-align:center;line-height:1.8}
 </style>
 </head>
@@ -158,29 +156,43 @@ footer{margin-top:5rem;padding-top:1.5rem;border-top:1px solid var(--rule);font-
     <div>
       <div class="brand"><em>Editorial</em> Scorer</div>
     </div>
-    <p class="strapline">Score any page against your editorial principles — get a detailed verdict for every dimension.</p>
+    <p class="strapline">Score any page — or a whole list of pages — against your editorial principles.</p>
   </header>
  
-  <!-- Principles preview strip -->
+  <!-- Principles preview -->
   <div class="principles-strip" id="pStrip"></div>
  
-  <!-- Form -->
-  <div class="card" id="formCard">
-    <div class="card-title">Score a <em>page</em></div>
- 
-    <div class="field">
-      <label class="label">Anthropic API key</label>
-      <div class="key-row">
-        <input type="text" id="apiKey" placeholder="sk-ant-api03-…" autocomplete="off" spellcheck="false" />
-        <a class="key-link" href="https://console.anthropic.com/settings/keys" target="_blank">Get a key →</a>
-      </div>
-      <p class="hint">Used only in your browser. Never stored or sent anywhere else.</p>
+  <!-- Scoring scale -->
+  <div class="scale-strip">
+    <div class="scale-chip" style="background:var(--rose-light);border-color:var(--rose-border)">
+      <div class="scale-chip-range" style="color:var(--rose)">0 – 40</div>
+      <div class="scale-chip-label" style="color:var(--rose)">Rewrite required</div>
     </div>
+    <div class="scale-chip" style="background:var(--amber-light);border-color:var(--amber-border)">
+      <div class="scale-chip-range" style="color:var(--amber)">40 – 60</div>
+      <div class="scale-chip-label" style="color:var(--amber)">Internal review needed</div>
+    </div>
+    <div class="scale-chip" style="background:#F0F7EB;border-color:#B8D8A0">
+      <div class="scale-chip-range" style="color:#3A6B20">60 – 75</div>
+      <div class="scale-chip-label" style="color:#3A6B20">Good — extra work needed</div>
+    </div>
+    <div class="scale-chip" style="background:var(--jade-light);border-color:var(--jade-border)">
+      <div class="scale-chip-range" style="color:var(--jade)">75 – 100</div>
+      <div class="scale-chip-label" style="color:var(--jade)">OK to publish</div>
+    </div>
+  </div>
  
+  <!-- Settings + form -->
+  <div class="card" id="formCard">
+    <div class="card-title">Score <em>content</em></div>
+ 
+    <!-- Settings row -->
     <div class="field">
-      <label class="label">Page URL</label>
-      <input type="url" id="pageUrl" placeholder="https://example.com/article" />
-      <p class="hint">The page will be fetched via the Anthropic API — no copy-pasting needed.</p>
+      <label class="label">Worker URL</label>
+      <div class="worker-row">
+        <input type="url" id="workerUrl" placeholder="https://your-worker.your-subdomain.workers.dev"/>
+      </div>
+      <p class="hint">Your Cloudflare Worker URL. See setup instructions below.</p>
     </div>
  
     <div class="field">
@@ -200,37 +212,40 @@ footer{margin-top:5rem;padding-top:1.5rem;border-top:1px solid var(--rule);font-
       <div class="pe-expanded" id="peExpanded"></div>
     </div>
  
-    <div class="btn-row">
-      <button class="btn btn-primary" id="scoreBtn" onclick="runScore()">Score this page →</button>
+    <!-- Tabs: single vs batch -->
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('single')">Single URL</button>
+      <button class="tab-btn" onclick="switchTab('batch')">Batch — multiple URLs</button>
     </div>
+ 
+    <div class="tab-panel active" id="tab-single">
+      <div class="field">
+        <label class="label">Page URL</label>
+        <input type="url" id="singleUrl" placeholder="https://example.com/article"/>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="scoreSingleBtn" onclick="runSingle()">Score this page →</button>
+      </div>
+    </div>
+ 
+    <div class="tab-panel" id="tab-batch">
+      <div class="field">
+        <label class="label">URLs — one per line</label>
+        <textarea id="batchUrls" rows="8" placeholder="https://example.com/page-one&#10;https://example.com/page-two&#10;https://example.com/page-three"></textarea>
+        <p class="hint">Or upload a .txt or .csv file with one URL per line.</p>
+        <input type="file" id="fileInput" accept=".txt,.csv" style="margin-top:8px;font-size:13px;color:var(--muted)" onchange="loadFile(event)"/>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="scoreBatchBtn" onclick="runBatch()">Score all URLs →</button>
+      </div>
+      <div id="progressList" class="progress-list"></div>
+    </div>
+ 
     <div class="status" id="status"></div>
   </div>
  
-  <!-- Scoring scale reference -->
-  <div class="card" style="padding:1.25rem 1.75rem">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px">
-      <div style="padding:.625rem .875rem;border-radius:var(--r);background:var(--rose-light);border:1px solid var(--rose-border)">
-        <div style="font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--rose);margin-bottom:2px">0 – 40</div>
-        <div style="font-size:13px;color:var(--rose);font-weight:500">Rewrite required</div>
-      </div>
-      <div style="padding:.625rem .875rem;border-radius:var(--r);background:var(--amber-light);border:1px solid var(--amber-border)">
-        <div style="font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);margin-bottom:2px">40 – 60</div>
-        <div style="font-size:13px;color:var(--amber);font-weight:500">Internal review needed</div>
-      </div>
-      <div style="padding:.625rem .875rem;border-radius:var(--r);background:#F0F7EB;border:1px solid #B8D8A0">
-        <div style="font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#3A6B20;margin-bottom:2px">60 – 75</div>
-        <div style="font-size:13px;color:#3A6B20;font-weight:500">Good — extra work needed</div>
-      </div>
-      <div style="padding:.625rem .875rem;border-radius:var(--r);background:var(--jade-light);border:1px solid var(--jade-border)">
-        <div style="font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--jade);margin-bottom:2px">75 – 100</div>
-        <div style="font-size:13px;color:var(--jade);font-weight:500">OK to publish</div>
-      </div>
-    </div>
-  </div>
- 
-  <!-- Results -->
+  <!-- Single result -->
   <div id="results">
- 
     <div class="res-hero">
       <div class="res-hero-left">
         <div class="res-url" id="resUrl"></div>
@@ -239,49 +254,81 @@ footer{margin-top:5rem;padding-top:1.5rem;border-top:1px solid var(--rule);font-
       </div>
       <div class="overall-badge" id="overallBadge"></div>
     </div>
- 
     <div class="score-grid" id="scoreGrid"></div>
     <div id="dimCards"></div>
- 
     <div class="rec-card">
       <div class="rec-label">Overall recommendation</div>
       <div class="rec-text" id="recText"></div>
     </div>
- 
     <div class="btn-row" style="margin-top:1.5rem">
-      <button class="btn" onclick="resetForm()">↺ Score another page</button>
+      <button class="btn" onclick="resetResults()">← Score another page</button>
     </div>
   </div>
  
-  <footer>
-    Editorial Scorer · Powered by the Anthropic API · Your API key stays in your browser only
-  </footer>
+  <!-- Batch results -->
+  <div id="batchResults" style="display:none">
+    <div class="batch-results">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:10px">
+        <div style="font-family:var(--serif);font-size:1.5rem;font-style:italic;color:var(--forest)">Batch results</div>
+        <button class="btn" onclick="downloadCSV()">↓ Download CSV</button>
+      </div>
+      <table class="batch-table">
+        <thead>
+          <tr>
+            <th>URL</th>
+            <th>Title</th>
+            <th>Overall</th>
+            <th>Band</th>
+            <th id="batchDimHeaders"></th>
+          </tr>
+        </thead>
+        <tbody id="batchTableBody"></tbody>
+      </table>
+    </div>
+    <div class="btn-row" style="margin-top:1.5rem">
+      <button class="btn" onclick="resetBatch()">← Score more pages</button>
+    </div>
+  </div>
+ 
+  <!-- Setup instructions -->
+  <div class="card" style="margin-top:2rem">
+    <div class="card-title" style="margin-bottom:1rem;font-size:1.2rem">Setup: Cloudflare Worker <em>(one-time, ~5 minutes)</em></div>
+    <ol style="margin-left:1.25rem;font-size:13px;color:var(--muted);line-height:2.2">
+      <li>Go to <a href="https://workers.cloudflare.com" target="_blank" style="color:var(--forest-mid)">workers.cloudflare.com</a> and create a free account</li>
+      <li>Click <strong>Create application</strong> → <strong>Create Worker</strong> → give it a name</li>
+      <li>Click <strong>Edit code</strong>, delete everything, and paste the contents of <strong>worker.js</strong> (download below)</li>
+      <li>Click <strong>Deploy</strong></li>
+      <li>Go to <strong>Settings → Variables → Add variable</strong> — name it <code style="background:var(--paper);padding:1px 5px;border-radius:3px;font-size:12px">ANTHROPIC_API_KEY</code>, paste your API key as the value, click <strong>Encrypt</strong> then <strong>Save</strong></li>
+      <li>Copy your Worker URL (shown at the top, like <code style="background:var(--paper);padding:1px 5px;border-radius:3px;font-size:12px">https://my-scorer.yourname.workers.dev</code>) and paste it into the Worker URL field above</li>
+    </ol>
+    <div style="margin-top:1.25rem">
+      <a href="worker.js" download class="btn btn-primary" style="text-decoration:none;font-size:13px;padding:9px 20px">↓ Download worker.js</a>
+    </div>
+  </div>
+ 
+  <footer>Editorial Scorer · Powered by Anthropic API via Cloudflare Workers · Free to run</footer>
 </div>
  
 <script>
-// ─── Scoring bands ────────────────────────────────────────────────
+// ── Band helper ───────────────────────────────────────────────────
 function band(s){
-  if(s<=40) return {cls:'rewrite',label:'Rewrite required'};
-  if(s<=60) return {cls:'review', label:'Internal review needed'};
-  if(s<=75) return {cls:'good',   label:'Good — extra work needed'};
-  return           {cls:'publish',label:'OK to publish'};
+  if(s<=40)return{cls:'rewrite',label:'Rewrite required'};
+  if(s<=60)return{cls:'review',label:'Internal review needed'};
+  if(s<=75)return{cls:'good',label:'Good — extra work needed'};
+  return{cls:'publish',label:'OK to publish'};
 }
  
-// ─── Default principles ───────────────────────────────────────────
+// ── Defaults ──────────────────────────────────────────────────────
 const DEFAULTS=[
-  {id:'audience',name:'Audience clarity',icon:'users',
-   desc:"Written for a specific persona, using their language. Identify who you are writing for and write for them specifically."},
-  {id:'naming',name:'Naming & language',icon:'tag',
-   desc:"Uses words the user would use when in the middle of a problem — not internal product groupings or jargon."},
-  {id:'relevance',name:'Relevance & need',icon:'calendar',
-   desc:"Driven by a real user need, timely and accurate. Content should have a clear trigger from the user's perspective."},
-  {id:'info_type',name:'Information type fit',icon:'list',
-   desc:"Clearly fits one of the 5 buckets: (1) What's new, (2) Getting started, (3) Learning, (4) Doing, (5) Fixing."}
+  {id:'audience',name:'Audience clarity',icon:'users',desc:"Written for a specific persona, using their language. Identify who you are writing for and write for them specifically."},
+  {id:'naming',name:'Naming & language',icon:'tag',desc:"Uses words the user would use when in the middle of a problem — not internal product groupings or jargon."},
+  {id:'relevance',name:'Relevance & need',icon:'calendar',desc:"Driven by a real user need, timely and accurate. Content should have a clear trigger from the user's perspective."},
+  {id:'info_type',name:'Information type fit',icon:'list',desc:"Clearly fits one of the 5 buckets: (1) What's new, (2) Getting started, (3) Learning, (4) Doing, (5) Fixing."}
 ];
 let principles=JSON.parse(JSON.stringify(DEFAULTS));
-let peOpen=false;
+let peOpen=false,activeTab='single',batchData=[];
  
-// ─── SVG icons ────────────────────────────────────────────────────
+// ── SVGs ──────────────────────────────────────────────────────────
 const SVG={
   users:`<svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
   tag:`<svg viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>`,
@@ -291,241 +338,219 @@ const SVG={
   person:`<svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`
 };
  
-// ─── Principles UI ────────────────────────────────────────────────
-function renderStrip(){
-  document.getElementById('pStrip').innerHTML=principles.map(p=>`
-    <div class="p-chip">
-      <div class="p-chip-name">${p.name}</div>
-      <div class="p-chip-desc">${p.desc}</div>
-    </div>`).join('');
-}
-function renderPEGrid(){
-  document.getElementById('peGrid').innerHTML=principles.map(p=>`
-    <div class="pe-mini">
-      <div class="pe-mini-name">${p.name}</div>
-      <div class="pe-mini-desc">${p.desc}</div>
-    </div>`).join('');
-}
-function renderPEExpanded(){
-  document.getElementById('peExpanded').innerHTML=principles.map((p,i)=>`
-    <div class="pe-row">
-      <input type="text" value="${p.name}" placeholder="Principle name" oninput="updateP(${i},'name',this.value)"/>
-      <textarea rows="3" oninput="updateP(${i},'desc',this.value)">${p.desc}</textarea>
-    </div>`).join('');
-}
+// ── Principles ────────────────────────────────────────────────────
+function renderStrip(){document.getElementById('pStrip').innerHTML=principles.map(p=>`<div class="p-chip"><div class="p-chip-name">${p.name}</div><div class="p-chip-desc">${p.desc}</div></div>`).join('');}
+function renderPEGrid(){document.getElementById('peGrid').innerHTML=principles.map(p=>`<div class="pe-mini"><div class="pe-mini-name">${p.name}</div><div class="pe-mini-desc">${p.desc}</div></div>`).join('');}
+function renderPEExpanded(){document.getElementById('peExpanded').innerHTML=principles.map((p,i)=>`<div class="pe-row"><input type="text" value="${p.name}" placeholder="Name" oninput="updateP(${i},'name',this.value)"/><textarea rows="3" oninput="updateP(${i},'desc',this.value)">${p.desc}</textarea></div>`).join('');}
 function updateP(i,f,v){principles[i][f]=v;renderStrip();renderPEGrid();}
-function togglePE(){
-  peOpen=!peOpen;
-  document.getElementById('peExpanded').style.display=peOpen?'flex':'none';
-  document.getElementById('peGrid').style.display=peOpen?'none':'grid';
-  document.getElementById('peToggleBtn').textContent=peOpen?'Done':'Edit';
-  if(peOpen)renderPEExpanded();
-}
-function resetPE(){
-  principles=JSON.parse(JSON.stringify(DEFAULTS));
-  renderStrip();renderPEGrid();
-  if(peOpen)renderPEExpanded();
+function togglePE(){peOpen=!peOpen;document.getElementById('peExpanded').style.display=peOpen?'flex':'none';document.getElementById('peGrid').style.display=peOpen?'none':'grid';document.getElementById('peToggleBtn').textContent=peOpen?'Done':'Edit';if(peOpen)renderPEExpanded();}
+function resetPE(){principles=JSON.parse(JSON.stringify(DEFAULTS));renderStrip();renderPEGrid();if(peOpen)renderPEExpanded();}
+ 
+// ── Tabs ──────────────────────────────────────────────────────────
+function switchTab(t){
+  activeTab=t;
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',(i===0&&t==='single')||(i===1&&t==='batch')));
+  document.getElementById('tab-single').classList.toggle('active',t==='single');
+  document.getElementById('tab-batch').classList.toggle('active',t==='batch');
 }
  
-// ─── Status helper ────────────────────────────────────────────────
-function setStatus(html,cls){
-  const el=document.getElementById('status');
-  el.style.display='block';
-  el.className='status'+(cls?' '+cls:'');
-  el.innerHTML=html;
-}
- 
-// ─── Build system prompt ──────────────────────────────────────────
-function buildSystem(aud){
-  const pLines=principles.map(p=>`${p.name.toUpperCase()} (id:"${p.id}"): ${p.desc}`).join('\n\n');
-  const dimTpl=principles.map(p=>
-    `{"name":"${p.name}","principle":"${p.id}","score":0,"commentary":"detailed explanation of why this score was given, referencing specific content from the page","suggestion":"one concrete actionable improvement"}`
-  ).join(',\n    ');
-  return `You are a rigorous editorial quality analyst. You will be given the text content of a web page. Score it against the editorial principles below for the stated intended audience.
- 
-INTENDED AUDIENCE: "${aud}"
- 
-SCORING SCALE — use this exactly:
-0–40: Rewrite required
-41–60: Internal review and more work needed
-61–75: Good, but requires some extra work
-76–100: OK to publish
- 
-PRINCIPLES:
-${pLines}
- 
-IMPORTANT: For each dimension, provide:
-1. A score (integer 0–100) calibrated to the band descriptions above
-2. A "commentary" of 2–4 sentences explaining specifically WHY this score was given, referencing actual content from the page
-3. A "suggestion" — one concrete, actionable improvement
- 
-Derive "overall_score" as the average of the dimension scores, rounded to the nearest integer.
- 
-Respond ONLY with a valid JSON object — no markdown fences, no preamble, no trailing text:
-{
-  "title": "page title",
-  "overall_score": 0,
-  "dimensions": [
-    ${dimTpl}
-  ],
-  "recommendation": "3–4 sentences of overall editorial recommendation referencing the intended audience and the most important actions to take"
-}`;
-}
- 
-// ─── Main scoring function ────────────────────────────────────────
-async function runScore(){
-  const key=document.getElementById('apiKey').value.trim();
-  const url=document.getElementById('pageUrl').value.trim();
-  const aud=document.getElementById('audience').value.trim();
- 
-  // Validate
-  let ok=true;
-  [{id:'apiKey',v:key},{id:'pageUrl',v:url},{id:'audience',v:aud}].forEach(({id,v})=>{
-    document.getElementById(id).classList.toggle('err',!v);
-    if(!v)ok=false;
-  });
-  if(!ok){setStatus('Please fill in all required fields.','err');return;}
-  if(!url.startsWith('http')){
-    document.getElementById('pageUrl').classList.add('err');
-    setStatus('Please enter a full URL starting with https://','err');return;
-  }
- 
-  document.getElementById('scoreBtn').disabled=true;
-  document.getElementById('results').style.display='none';
-  setStatus('<span class="spin"></span>Fetching page and analysing against editorial principles…','info');
- 
-  const sys=buildSystem(aud);
- 
-  // Use web_fetch tool so Anthropic fetches the URL server-side
-  let messages=[{role:'user',content:`Please fetch and score this page: ${url}`}];
-  const reqBody={
-    model:'claude-sonnet-4-20250514',
-    max_tokens:2000,
-    system:sys,
-    tools:[{type:'web_fetch_20250910',name:'web_fetch',max_uses:3}],
-    messages
+// ── File upload ───────────────────────────────────────────────────
+function loadFile(e){
+  const file=e.target.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=ev=>{
+    const lines=ev.target.result.split('\n').map(l=>l.trim()).filter(l=>l.startsWith('http'));
+    document.getElementById('batchUrls').value=lines.join('\n');
   };
+  reader.readAsText(file);
+}
+ 
+// ── Status ────────────────────────────────────────────────────────
+function setStatus(html,cls){const el=document.getElementById('status');el.style.display='block';el.className='status'+(cls?' '+cls:'');el.innerHTML=html;}
+function clearStatus(){document.getElementById('status').style.display='none';}
+ 
+// ── Validate common fields ────────────────────────────────────────
+function validateCommon(){
+  const workerUrl=document.getElementById('workerUrl').value.trim();
+  const audience=document.getElementById('audience').value.trim();
+  let ok=true;
+  [{id:'workerUrl',v:workerUrl},{id:'audience',v:audience}].forEach(({id,v})=>{
+    document.getElementById(id).classList.toggle('err',!v);if(!v)ok=false;
+  });
+  if(!ok){setStatus('Please fill in the Worker URL and intended audience.','err');return null;}
+  return{workerUrl,audience};
+}
+ 
+// ── Single URL ────────────────────────────────────────────────────
+async function runSingle(){
+  const common=validateCommon();if(!common)return;
+  const url=document.getElementById('singleUrl').value.trim();
+  if(!url){document.getElementById('singleUrl').classList.add('err');setStatus('Please enter a URL.','err');return;}
+  document.getElementById('singleUrl').classList.remove('err');
+  document.getElementById('scoreSingleBtn').disabled=true;
+  document.getElementById('results').style.display='none';
+  setStatus('<span class="spin"></span>Fetching and scoring…','info');
+  try{
+    const resp=await fetch(common.workerUrl+'/score',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({url,audience:common.audience,principles})
+    });
+    const data=await resp.json();
+    if(data.error)throw new Error(data.error);
+    clearStatus();
+    renderSingle(data,common.audience);
+  }catch(e){
+    setStatus(`Error: ${e.message}`,'err');
+  }
+  document.getElementById('scoreSingleBtn').disabled=false;
+}
+ 
+// ── Batch URLs ────────────────────────────────────────────────────
+async function runBatch(){
+  const common=validateCommon();if(!common)return;
+  const raw=document.getElementById('batchUrls').value.trim();
+  if(!raw){document.getElementById('batchUrls').classList.add('err');setStatus('Please enter at least one URL.','err');return;}
+  const urls=raw.split('\n').map(u=>u.trim()).filter(u=>u.startsWith('http'));
+  if(!urls.length){setStatus('No valid URLs found. Each URL must start with http.','err');return;}
+ 
+  document.getElementById('scoreBatchBtn').disabled=true;
+  document.getElementById('batchResults').style.display='none';
+  batchData=[];
+ 
+  // Build progress list
+  const pl=document.getElementById('progressList');
+  pl.innerHTML=urls.map((u,i)=>`<div class="progress-item" id="pi-${i}">
+    <span class="pi-url">${u}</span>
+    <span class="pi-status pi-waiting" id="pis-${i}">Waiting</span>
+  </div>`).join('');
+ 
+  setStatus(`<span class="spin"></span>Scoring ${urls.length} URL${urls.length>1?'s':''}…`,'info');
  
   try{
-    let analysis=null;
+    const resp=await fetch(common.workerUrl+'/batch',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({urls,audience:common.audience,principles})
+    });
+    if(!resp.ok)throw new Error(`Worker returned ${resp.status}`);
  
-    for(let turn=0;turn<6;turn++){
-      const resp=await fetch('https://api.anthropic.com/v1/messages',{
-        method:'POST',
-        headers:{
-          'Content-Type':'application/json',
-          'x-api-key':key,
-          'anthropic-version':'2023-06-01',
-          'anthropic-beta':'web-fetch-2025-09-10',
-          'anthropic-dangerous-direct-browser-calls':'true'
-        },
-        body:JSON.stringify({...reqBody,messages})
-      });
+    const reader=resp.body.getReader();
+    const dec=new TextDecoder();
+    let buf='';
  
-      if(!resp.ok){
-        const err=await resp.json().catch(()=>({error:{message:`HTTP ${resp.status}`}}));
-        throw new Error(err.error?.message||`HTTP ${resp.status}`);
+    // Mark first as running
+    document.getElementById(`pis-0`).className='pi-status pi-running';
+    document.getElementById(`pis-0`).textContent='Scoring…';
+ 
+    while(true){
+      const{done,value}=await reader.read();
+      if(done)break;
+      buf+=dec.decode(value,{stream:true});
+      const lines=buf.split('\n');
+      buf=lines.pop();
+      for(const line of lines){
+        if(!line.trim())continue;
+        try{
+          const item=JSON.parse(line);
+          const pis=document.getElementById(`pis-${item.index}`);
+          if(item.status==='ok'){
+            pis.className='pi-status pi-done';
+            pis.textContent=`${item.overall_score} — ${item.overall_band}`;
+            batchData.push(item);
+          } else {
+            pis.className='pi-status pi-error';
+            pis.textContent=`Error: ${item.error}`;
+            batchData.push({...item,overall_score:'—',overall_band:'Error'});
+          }
+          // Mark next as running
+          const next=document.getElementById(`pis-${item.index+1}`);
+          if(next){next.className='pi-status pi-running';next.textContent='Scoring…';}
+        }catch(e){console.error('Parse error',e,line);}
       }
- 
-      const data=await resp.json();
-      if(data.error)throw new Error(data.error.message);
- 
-      const textBlocks=(data.content||[]).filter(b=>b.type==='text');
-      const toolBlocks=(data.content||[]).filter(b=>b.type==='tool_use');
- 
-      if(data.stop_reason==='end_turn'||!toolBlocks.length){
-        const txt=textBlocks.map(b=>b.text).join('');
-        const clean=txt.replace(/```json|```/g,'').trim();
-        const s=clean.indexOf('{'),e=clean.lastIndexOf('}');
-        if(s===-1)throw new Error('Could not parse a score from the response. Please try again.');
-        analysis=JSON.parse(clean.slice(s,e+1));
-        break;
-      }
- 
-      // Continue tool use loop
-      messages=[
-        ...messages,
-        {role:'assistant',content:data.content},
-        {role:'user',content:toolBlocks.map(t=>({type:'tool_result',tool_use_id:t.id,content:'Content fetched successfully.'}))}
-      ];
     }
  
-    if(!analysis)throw new Error('Analysis did not complete. Please try again.');
-    renderResults(analysis,aud,url);
-    document.getElementById('status').style.display='none';
- 
-  }catch(err){
-    setStatus(`Error: ${err.message||'Something went wrong. Check your API key and try again.'}`, 'err');
+    clearStatus();
+    renderBatch(batchData,common.audience);
+  }catch(e){
+    setStatus(`Error: ${e.message}`,'err');
   }
- 
-  document.getElementById('scoreBtn').disabled=false;
+  document.getElementById('scoreBatchBtn').disabled=false;
 }
  
-// ─── Render results ───────────────────────────────────────────────
-function renderResults(a,aud,url){
+// ── Render single result ──────────────────────────────────────────
+function renderSingle(a,aud){
   const ob=band(a.overall_score);
- 
-  // Hero
-  document.getElementById('resUrl').innerHTML=`<a href="${url}" target="_blank">${url}</a>`;
+  document.getElementById('resUrl').innerHTML=a.url?`<a href="${a.url}" target="_blank">${a.url}</a>`:'';
   document.getElementById('resTitle').textContent=a.title||'Untitled page';
   document.getElementById('resAudience').innerHTML=`${SVG.person}<span><strong>Scored for:</strong> ${aud}</span>`;
- 
   const badge=document.getElementById('overallBadge');
   badge.className=`overall-badge bg-${ob.cls}`;
-  badge.innerHTML=`
-    <div class="ob-score c-${ob.cls}">${a.overall_score}</div>
-    <div class="ob-label c-${ob.cls}">${ob.label}</div>`;
- 
-  // Score grid
+  badge.innerHTML=`<div class="ob-score c-${ob.cls}">${a.overall_score}</div><div class="ob-label c-${ob.cls}">${ob.label}</div>`;
   const iconMap=Object.fromEntries(principles.map(p=>[p.id,p.icon]));
-  document.getElementById('scoreGrid').innerHTML=a.dimensions.map(d=>{
-    const b=band(d.score);
-    return `<div class="sc">
-      <div class="sc-label">${d.name}</div>
-      <div class="sc-num c-${b.cls}">${d.score}</div>
-      <div class="sc-band c-${b.cls}">${b.label}</div>
-    </div>`;
+  document.getElementById('scoreGrid').innerHTML=(a.dimensions||[]).map(d=>{const b=band(d.score);return`<div class="sc"><div class="sc-label">${d.name}</div><div class="sc-num c-${b.cls}">${d.score}</div><div class="sc-band c-${b.cls}">${b.label}</div></div>`;}).join('');
+  document.getElementById('dimCards').innerHTML=(a.dimensions||[]).map(d=>{
+    const b=band(d.score);const icon=SVG[iconMap[d.principle]]||SVG.list;
+    return`<div class="dim"><div class="dim-head"><div class="dim-icon icon-${b.cls}">${icon}</div><div class="dim-name">${d.name}</div><div class="dim-badge bg-${b.cls} c-${b.cls}">${d.score}/100</div></div><div class="bar-track"><div class="bar-fill bar-${b.cls}" style="width:${Math.max(2,d.score)}%"></div></div><div class="dim-score-row"><span class="dim-score-num c-${b.cls}">${d.score}</span><span class="dim-score-band bg-${b.cls} c-${b.cls}">${b.label}</span></div><div class="dim-section"><div class="dim-section-label">Commentary</div><div class="dim-commentary">${d.commentary||''}</div></div><div class="dim-suggestion">${SVG.bulb}<span>${d.suggestion}</span></div></div>`;
   }).join('');
- 
-  // Dimension cards
-  document.getElementById('dimCards').innerHTML=a.dimensions.map(d=>{
-    const b=band(d.score);
-    const icon=SVG[iconMap[d.principle]]||SVG.list;
-    return `<div class="dim">
-      <div class="dim-head">
-        <div class="dim-icon icon-${b.cls}">${icon}</div>
-        <div class="dim-name">${d.name}${d.detected_type?`<small>(${d.detected_type})</small>`:''}</div>
-        <div class="dim-badge bg-${b.cls} c-${b.cls}">${d.score}/100</div>
-      </div>
-      <div class="bar-track"><div class="bar-fill bar-${b.cls}" style="width:${Math.max(2,d.score)}%"></div></div>
-      <div class="dim-score-row">
-        <span class="dim-score-num c-${b.cls}">${d.score}</span>
-        <span class="dim-score-band bg-${b.cls} c-${b.cls}">${b.label}</span>
-      </div>
-      <div class="dim-section">
-        <div class="dim-section-label">Commentary</div>
-        <div class="dim-commentary">${d.commentary||d.verdict||''}</div>
-      </div>
-      <div class="dim-suggestion">${SVG.bulb}<span>${d.suggestion}</span></div>
-    </div>`;
-  }).join('');
- 
-  document.getElementById('recText').textContent=a.recommendation;
- 
+  document.getElementById('recText').textContent=a.recommendation||'';
   document.getElementById('formCard').style.display='none';
   document.getElementById('results').style.display='block';
   window.scrollTo({top:0,behavior:'smooth'});
 }
  
-function resetForm(){
-  document.getElementById('results').style.display='none';
-  document.getElementById('formCard').style.display='block';
-  document.getElementById('status').style.display='none';
+// ── Render batch results ──────────────────────────────────────────
+function renderBatch(data,aud){
+  const dimNames=principles.map(p=>p.name);
+  // Extra header cells for each dimension
+  const existingTh=document.getElementById('batchDimHeaders');
+  existingTh.outerHTML='<th>'+dimNames.join('</th><th>')+'</th>';
+ 
+  document.getElementById('batchTableBody').innerHTML=data.map(item=>{
+    if(item.status==='error'){
+      return`<tr><td colspan="${4+dimNames.length}" style="color:var(--rose)"><a class="batch-url" href="${item.url}" target="_blank">${item.url}</a> — ${item.error}</td></tr>`;
+    }
+    const ob=band(item.overall_score);
+    const dimCells=(item.dimensions||[]).map(d=>{
+      const b=band(d.score);
+      return`<td class="c-${b.cls}" style="font-weight:500;white-space:nowrap">${d.score}</td>`;
+    }).join('');
+    return`<tr>
+      <td><a class="batch-url" href="${item.url}" target="_blank">${item.url}</a></td>
+      <td style="font-size:13px">${item.title||''}</td>
+      <td class="c-${ob.cls}" style="font-weight:500;font-family:var(--serif);font-size:1.1rem">${item.overall_score}</td>
+      <td><span class="dim-score-band bg-${ob.cls} c-${ob.cls}" style="font-size:11px;padding:2px 8px;border-radius:20px;border:1px solid;white-space:nowrap">${ob.label}</span></td>
+      ${dimCells}
+    </tr>`;
+  }).join('');
+ 
+  document.getElementById('formCard').style.display='none';
+  document.getElementById('batchResults').style.display='block';
   window.scrollTo({top:0,behavior:'smooth'});
 }
  
-// ─── Init ─────────────────────────────────────────────────────────
-renderStrip();
-renderPEGrid();
+// ── CSV download ──────────────────────────────────────────────────
+function downloadCSV(){
+  const dimNames=principles.map(p=>p.name);
+  const headers=['URL','Title','Overall Score','Band',...dimNames,'Recommendation'];
+  const rows=batchData.map(item=>{
+    if(item.status==='error')return[item.url,'','','Error',...dimNames.map(()=>''),item.error||''];
+    const ob=band(item.overall_score);
+    const dimScores=(item.dimensions||[]).map(d=>d.score);
+    return[item.url,item.title||'',item.overall_score,ob.label,...dimScores,item.recommendation||''];
+  });
+  const csv=[headers,...rows].map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const blob=new Blob([csv],{type:'text/csv'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='editorial-scores.csv';
+  a.click();
+}
+ 
+function resetResults(){document.getElementById('results').style.display='none';document.getElementById('formCard').style.display='block';window.scrollTo({top:0,behavior:'smooth'});}
+function resetBatch(){document.getElementById('batchResults').style.display='none';document.getElementById('formCard').style.display='block';document.getElementById('progressList').innerHTML='';window.scrollTo({top:0,behavior:'smooth'});}
+ 
+renderStrip();renderPEGrid();
 </script>
 </body>
+</html>
