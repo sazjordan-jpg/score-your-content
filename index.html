@@ -29,14 +29,19 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
 .brand{font-family:var(--serif);font-size:2.4rem;color:var(--forest);letter-spacing:-0.01em;line-height:1;font-weight:500}
 .brand em{font-style:italic;color:var(--forest-mid)}
 .strapline{font-size:13px;color:var(--muted);max-width:400px;line-height:1.6;padding-bottom:2px}
+ 
+/* Principles strip */
 .principles-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-bottom:2rem}
 .p-chip{background:var(--cream);border:1px solid var(--rule);border-radius:var(--r);padding:.75rem 1rem}
 .p-chip-name{font-size:10px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
 .p-chip-desc{font-size:12px;color:var(--ink);line-height:1.45;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+ 
+/* Scale strip */
 .scale-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-bottom:2rem}
 .scale-chip{padding:.625rem .875rem;border-radius:var(--r);border:1px solid}
 .scale-chip-range{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}
 .scale-chip-label{font-size:13px;font-weight:500}
+ 
 .card{background:var(--cream);border:1px solid var(--rule);border-radius:var(--r-xl);padding:2rem 2.25rem;margin-bottom:1.25rem;box-shadow:var(--shadow)}
 .card-title{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--ink);margin-bottom:1.75rem;line-height:1.2}
 .card-title em{font-style:italic;color:var(--forest)}
@@ -49,27 +54,50 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height
  
 .field{margin-bottom:1.25rem}
 .label{display:block;font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
-input[type=text],input[type=url],textarea{width:100%;font-family:var(--sans);font-size:14px;color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:var(--r);padding:11px 14px;outline:none;transition:border-color .2s,background .2s,box-shadow .2s;resize:vertical;line-height:1.5}
-input[type=text]:focus,input[type=url]:focus,textarea:focus{border-color:var(--forest-mid);background:var(--cream);box-shadow:0 0 0 3px rgba(28,56,40,.08)}
+input[type=text],input[type=url],input[type=number],textarea{width:100%;font-family:var(--sans);font-size:14px;color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:var(--r);padding:11px 14px;outline:none;transition:border-color .2s,background .2s,box-shadow .2s;resize:vertical;line-height:1.5}
+input[type=number]{padding:8px 10px}
+input[type=text]:focus,input[type=url]:focus,input[type=number]:focus,textarea:focus{border-color:var(--forest-mid);background:var(--cream);box-shadow:0 0 0 3px rgba(28,56,40,.08)}
 input.err,textarea.err{border-color:var(--rose);box-shadow:0 0 0 3px rgba(106,24,24,.08)}
 .hint{font-size:12px;color:var(--ghost);margin-top:5px;line-height:1.55}
-.key-row{display:flex;gap:8px;align-items:flex-start}
-.key-row input{flex:1}
-.key-link{font-size:12px;color:var(--forest-mid);text-decoration:none;white-space:nowrap;padding-top:12px}
-.key-link:hover{text-decoration:underline}
 .worker-row{display:flex;gap:8px;align-items:flex-start}
 .worker-row input{flex:1}
-.pe-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.pe-header .label{margin:0}
-.pe-actions{display:flex;gap:5px}
+ 
+/* Section toggles */
+.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.section-header .label{margin:0}
+.section-actions{display:flex;gap:5px}
+ 
+/* Principles editor */
 .pe-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
 .pe-mini{background:var(--paper);border:1px solid var(--rule);border-radius:var(--r);padding:.75rem}
 .pe-mini-name{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
 .pe-mini-desc{font-size:12px;color:var(--ink);line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-.pe-expanded{margin-top:10px;display:none;flex-direction:column;gap:8px}
-.pe-row{background:var(--paper);border:1px solid var(--rule);border-radius:var(--r);padding:.875rem;display:grid;grid-template-columns:1fr 2fr;gap:10px;align-items:start}
-.pe-row input{font-size:13px;font-weight:500;padding:8px 10px;background:var(--cream)}
-.pe-row textarea{font-size:13px;padding:8px 10px;background:var(--cream);min-height:72px}
+.pe-expanded{margin-top:12px;display:none;flex-direction:column;gap:8px}
+.pe-item{background:var(--paper);border:1px solid var(--rule);border-radius:var(--r);padding:1rem}
+.pe-item-header{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.pe-item-num{font-size:11px;font-weight:500;color:var(--ghost);background:var(--cream);border:1px solid var(--rule);border-radius:20px;padding:1px 8px;flex-shrink:0}
+.pe-item-name{flex:1}
+.pe-item-name input{font-size:13px;font-weight:500;padding:7px 10px;background:var(--cream)}
+.pe-item-desc textarea{font-size:13px;padding:8px 10px;background:var(--cream);min-height:64px}
+.pe-item-actions{display:flex;gap:4px;flex-shrink:0}
+.btn-icon{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;font-size:14px;color:var(--muted);background:transparent;border:1px solid var(--rule);border-radius:6px;cursor:pointer;transition:all .15s;padding:0;font-family:var(--sans)}
+.btn-icon:hover{background:var(--paper);color:var(--ink);border-color:var(--rule-strong)}
+.btn-icon.danger:hover{background:var(--rose-light);color:var(--rose);border-color:var(--rose-border)}
+.pe-add{margin-top:8px;width:100%;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px;background:transparent;border:1px dashed var(--rule);border-radius:var(--r);font-family:var(--sans);font-size:13px;color:var(--muted);cursor:pointer;transition:all .15s}
+.pe-add:hover{background:var(--paper);border-color:var(--rule-strong);color:var(--ink)}
+ 
+/* Scoring bands editor */
+.bands-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.band-mini{border-radius:var(--r);padding:.625rem .875rem;border:1px solid}
+.band-mini-range{font-size:10px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;margin-bottom:2px}
+.band-mini-label{font-size:13px;font-weight:500}
+.bands-expanded{margin-top:12px;display:none;flex-direction:column;gap:8px}
+.band-item{background:var(--paper);border:1px solid var(--rule);border-radius:var(--r);padding:1rem;display:grid;grid-template-columns:auto auto 1fr;gap:10px;align-items:center}
+.band-item-color{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+.band-item-range{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);white-space:nowrap}
+.band-item-range input[type=number]{width:60px;padding:6px 8px;font-size:13px;text-align:center}
+.band-item-label input{font-size:13px;font-weight:500;padding:7px 10px;background:var(--cream)}
+ 
 .btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-size:13px;font-weight:400;color:var(--muted);background:transparent;border:1px solid var(--rule);border-radius:var(--r);padding:6px 14px;cursor:pointer;transition:all .15s;white-space:nowrap}
 .btn:hover{background:var(--paper);color:var(--ink);border-color:var(--rule-strong)}
 .btn-primary{background:var(--forest);color:#fff;border-color:var(--forest);font-size:14px;font-weight:500;padding:12px 28px;border-radius:var(--r)}
@@ -131,8 +159,6 @@ input.err,textarea.err{border-color:var(--rose);box-shadow:0 0 0 3px rgba(106,24
 .rec-card{background:var(--forest);color:#fff;border-radius:var(--r-xl);padding:1.75rem 2.25rem;margin-top:1.25rem;box-shadow:var(--shadow-lg)}
 .rec-label{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;opacity:.55;margin-bottom:10px}
 .rec-text{font-family:var(--serif);font-size:1.2rem;font-style:italic;line-height:1.7;opacity:.92;font-weight:400}
- 
-/* Batch results table */
 .batch-results{margin-top:1.5rem}
 .batch-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--cream);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow)}
 .batch-table th{background:var(--forest);color:#fff;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:10px 14px;text-align:left}
@@ -141,11 +167,6 @@ input.err,textarea.err{border-color:var(--rose);box-shadow:0 0 0 3px rgba(106,24
 .batch-table tr:hover td{background:var(--paper)}
 .batch-url{color:var(--forest-mid);text-decoration:none;word-break:break-all;font-size:12px}
 .batch-url:hover{text-decoration:underline}
- 
-.c-rewrite{color:var(--rose)}.bg-rewrite{background:var(--rose-light);border-color:var(--rose-border)}.bar-rewrite{background:#C03030}.icon-rewrite{background:var(--rose-light);color:var(--rose)}
-.c-review{color:var(--amber)}.bg-review{background:var(--amber-light);border-color:var(--amber-border)}.bar-review{background:#C07A00}.icon-review{background:var(--amber-light);color:var(--amber)}
-.c-good{color:#3A6B20}.bg-good{background:#F0F7EB;border-color:#B8D8A0}.bar-good{background:#4A8A28}.icon-good{background:#F0F7EB;color:#3A6B20}
-.c-publish{color:var(--jade)}.bg-publish{background:var(--jade-light);border-color:var(--jade-border)}.bar-publish{background:#2D7A4A}.icon-publish{background:var(--jade-light);color:var(--jade)}
 footer{margin-top:5rem;padding-top:1.5rem;border-top:1px solid var(--rule);font-size:12px;color:var(--ghost);text-align:center;line-height:1.8}
 </style>
 </head>
@@ -159,34 +180,17 @@ footer{margin-top:5rem;padding-top:1.5rem;border-top:1px solid var(--rule);font-
     <p class="strapline">Score any page — or a whole list of pages — against your editorial principles.</p>
   </header>
  
-  <!-- Principles preview -->
+  <!-- Live principles preview -->
   <div class="principles-strip" id="pStrip"></div>
  
-  <!-- Scoring scale -->
-  <div class="scale-strip">
-    <div class="scale-chip" style="background:var(--rose-light);border-color:var(--rose-border)">
-      <div class="scale-chip-range" style="color:var(--rose)">0 – 40</div>
-      <div class="scale-chip-label" style="color:var(--rose)">Rewrite required</div>
-    </div>
-    <div class="scale-chip" style="background:var(--amber-light);border-color:var(--amber-border)">
-      <div class="scale-chip-range" style="color:var(--amber)">40 – 60</div>
-      <div class="scale-chip-label" style="color:var(--amber)">Internal review needed</div>
-    </div>
-    <div class="scale-chip" style="background:#F0F7EB;border-color:#B8D8A0">
-      <div class="scale-chip-range" style="color:#3A6B20">60 – 75</div>
-      <div class="scale-chip-label" style="color:#3A6B20">Good — extra work needed</div>
-    </div>
-    <div class="scale-chip" style="background:var(--jade-light);border-color:var(--jade-border)">
-      <div class="scale-chip-range" style="color:var(--jade)">75 – 100</div>
-      <div class="scale-chip-label" style="color:var(--jade)">OK to publish</div>
-    </div>
-  </div>
+  <!-- Live scoring scale preview -->
+  <div class="scale-strip" id="scaleStrip"></div>
  
-  <!-- Settings + form -->
+  <!-- Main form card -->
   <div class="card" id="formCard">
     <div class="card-title">Score <em>content</em></div>
  
-    <!-- Settings row -->
+    <!-- Worker URL -->
     <div class="field">
       <label class="label">Worker URL</label>
       <div class="worker-row">
@@ -195,15 +199,17 @@ footer{margin-top:5rem;padding-top:1.5rem;border-top:1px solid var(--rule);font-
       <p class="hint">Your Cloudflare Worker URL. See setup instructions below.</p>
     </div>
  
+    <!-- Audience -->
     <div class="field">
       <label class="label">Intended audience</label>
       <textarea id="audience" rows="2" placeholder="e.g. Existing customers wanting to understand a new feature and how to use it."></textarea>
     </div>
  
+    <!-- Principles editor -->
     <div class="field">
-      <div class="pe-header">
+      <div class="section-header">
         <span class="label">Editorial principles</span>
-        <div class="pe-actions">
+        <div class="section-actions">
           <button class="btn" id="peToggleBtn" onclick="togglePE()">Edit</button>
           <button class="btn" onclick="resetPE()">Reset</button>
         </div>
@@ -212,7 +218,20 @@ footer{margin-top:5rem;padding-top:1.5rem;border-top:1px solid var(--rule);font-
       <div class="pe-expanded" id="peExpanded"></div>
     </div>
  
-    <!-- Tabs: single vs batch -->
+    <!-- Scoring bands editor -->
+    <div class="field">
+      <div class="section-header">
+        <span class="label">Scoring bands</span>
+        <div class="section-actions">
+          <button class="btn" id="bandsToggleBtn" onclick="toggleBands()">Edit</button>
+          <button class="btn" onclick="resetBands()">Reset</button>
+        </div>
+      </div>
+      <div class="bands-grid" id="bandsGrid"></div>
+      <div class="bands-expanded" id="bandsExpanded"></div>
+    </div>
+ 
+    <!-- Score tabs -->
     <div class="tabs">
       <button class="tab-btn active" onclick="switchTab('single')">Single URL</button>
       <button class="tab-btn" onclick="switchTab('batch')">Batch — multiple URLs</button>
@@ -273,14 +292,7 @@ footer{margin-top:5rem;padding-top:1.5rem;border-top:1px solid var(--rule);font-
         <button class="btn" onclick="downloadCSV()">↓ Download CSV</button>
       </div>
       <table class="batch-table">
-        <thead>
-          <tr>
-            <th>URL</th>
-            <th>Title</th>
-            <th>Overall</th>
-            <th>Band</th>
-          </tr>
-        </thead>
+        <thead><tr id="batchThead"></tr></thead>
         <tbody id="batchTableBody"></tbody>
       </table>
     </div>
@@ -294,11 +306,10 @@ footer{margin-top:5rem;padding-top:1.5rem;border-top:1px solid var(--rule);font-
     <div class="card-title" style="margin-bottom:1rem;font-size:1.2rem">Setup: Cloudflare Worker <em>(one-time, ~5 minutes)</em></div>
     <ol style="margin-left:1.25rem;font-size:13px;color:var(--muted);line-height:2.2">
       <li>Go to <a href="https://workers.cloudflare.com" target="_blank" style="color:var(--forest-mid)">workers.cloudflare.com</a> and create a free account</li>
-      <li>Click <strong>Create application</strong> → <strong>Create Worker</strong> → give it a name</li>
-      <li>Click <strong>Edit code</strong>, delete everything, and paste the contents of <strong>worker.js</strong> (download below)</li>
-      <li>Click <strong>Deploy</strong></li>
-      <li>Go to <strong>Settings → Variables → Add variable</strong> — name it <code style="background:var(--paper);padding:1px 5px;border-radius:3px;font-size:12px">ANTHROPIC_API_KEY</code>, paste your API key as the value, click <strong>Encrypt</strong> then <strong>Save</strong></li>
-      <li>Copy your Worker URL (shown at the top, like <code style="background:var(--paper);padding:1px 5px;border-radius:3px;font-size:12px">https://my-scorer.yourname.workers.dev</code>) and paste it into the Worker URL field above</li>
+      <li>Click <strong>Create application</strong> → <strong>Hello World</strong> → give it a name → <strong>Deploy</strong></li>
+      <li>Click <strong>Edit code</strong>, delete everything, paste the contents of <strong>worker.js</strong> → <strong>Deploy</strong></li>
+      <li>Go to <strong>Settings → Variables and Secrets → Add</strong> → name: <code style="background:var(--paper);padding:1px 5px;border-radius:3px;font-size:12px">ANTHROPIC_API_KEY</code> → paste your key → <strong>Deploy</strong></li>
+      <li>Copy your Worker URL and paste it into the Worker URL field above</li>
     </ol>
     <div style="margin-top:1.25rem">
       <a href="worker.js" download class="btn btn-primary" style="text-decoration:none;font-size:13px;padding:9px 20px">↓ Download worker.js</a>
@@ -309,41 +320,197 @@ footer{margin-top:5rem;padding-top:1.5rem;border-top:1px solid var(--rule);font-
 </div>
  
 <script>
-// ── Band helper ───────────────────────────────────────────────────
-function band(s){
-  if(s<=40)return{cls:'rewrite',label:'Rewrite required'};
-  if(s<=60)return{cls:'review',label:'Internal review needed'};
-  if(s<=75)return{cls:'good',label:'Good — extra work needed'};
-  return{cls:'publish',label:'OK to publish'};
+// ── Default scoring bands ─────────────────────────────────────────
+// Each band: {max, label, cls}  — scored 0–100, bands are "up to max"
+// Last band has max:100
+const DEFAULT_BANDS = [
+  {max:40,  label:'Rewrite required',        cls:'rewrite'},
+  {max:60,  label:'Internal review needed',  cls:'review'},
+  {max:75,  label:'Good — extra work needed',cls:'good'},
+  {max:100, label:'OK to publish',           cls:'publish'},
+];
+const BAND_COLORS = {
+  rewrite:{bg:'var(--rose-light)',  border:'var(--rose-border)',  text:'var(--rose)',  dot:'#C03030'},
+  review: {bg:'var(--amber-light)', border:'var(--amber-border)', text:'var(--amber)', dot:'#C07A00'},
+  good:   {bg:'#F0F7EB',           border:'#B8D8A0',             text:'#3A6B20',      dot:'#4A8A28'},
+  publish:{bg:'var(--jade-light)', border:'var(--jade-border)',  text:'var(--jade)',  dot:'#2D7A4A'},
+};
+let bands = JSON.parse(JSON.stringify(DEFAULT_BANDS));
+ 
+function band(s) {
+  for(const b of bands) { if(s <= b.max) return b; }
+  return bands[bands.length-1];
+}
+function bandStyle(b){
+  const c=BAND_COLORS[b.cls]||BAND_COLORS.publish;
+  return {bg:c.bg,border:c.border,text:c.text,dot:c.dot};
 }
  
-// ── Defaults ──────────────────────────────────────────────────────
-const DEFAULTS=[
-  {id:'audience',name:'Audience clarity',icon:'users',desc:"Written for a specific persona, using their language. Identify who you are writing for and write for them specifically."},
-  {id:'naming',name:'Naming & language',icon:'tag',desc:"Uses words the user would use when in the middle of a problem — not internal product groupings or jargon."},
-  {id:'relevance',name:'Relevance & need',icon:'calendar',desc:"Driven by a real user need, timely and accurate. Content should have a clear trigger from the user's perspective."},
-  {id:'info_type',name:'Information type fit',icon:'list',desc:"Clearly fits one of the 5 buckets: (1) What's new, (2) Getting started, (3) Learning, (4) Doing, (5) Fixing."}
+// ── Default principles ────────────────────────────────────────────
+const DEFAULT_PRINCIPLES = [
+  {id:'audience',name:'Audience clarity',icon:'users',
+   desc:"Written for a specific persona, using their language. Identify who you are writing for and write for them specifically."},
+  {id:'naming',name:'Naming & language',icon:'tag',
+   desc:"Uses words the user would use when in the middle of a problem — not internal product groupings or jargon."},
+  {id:'relevance',name:'Relevance & need',icon:'calendar',
+   desc:"Driven by a real user need, timely and accurate. Content should have a clear trigger from the user's perspective."},
+  {id:'info_type',name:'Information type fit',icon:'list',
+   desc:"Clearly fits one of the 5 buckets: (1) What's new, (2) Getting started, (3) Learning, (4) Doing, (5) Fixing."}
 ];
-let principles=JSON.parse(JSON.stringify(DEFAULTS));
-let peOpen=false,activeTab='single',batchData=[];
+let principles = JSON.parse(JSON.stringify(DEFAULT_PRINCIPLES));
+let peOpen = false, bandsOpen = false, activeTab = 'single', batchData = [];
  
 // ── SVGs ──────────────────────────────────────────────────────────
-const SVG={
+const SVG = {
   users:`<svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
   tag:`<svg viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>`,
   calendar:`<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg>`,
   list:`<svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>`,
   bulb:`<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`,
-  person:`<svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`
+  person:`<svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,
+  up:`↑`, down:`↓`, del:`✕`, add:`+`
 };
  
-// ── Principles ────────────────────────────────────────────────────
-function renderStrip(){document.getElementById('pStrip').innerHTML=principles.map(p=>`<div class="p-chip"><div class="p-chip-name">${p.name}</div><div class="p-chip-desc">${p.desc}</div></div>`).join('');}
-function renderPEGrid(){document.getElementById('peGrid').innerHTML=principles.map(p=>`<div class="pe-mini"><div class="pe-mini-name">${p.name}</div><div class="pe-mini-desc">${p.desc}</div></div>`).join('');}
-function renderPEExpanded(){document.getElementById('peExpanded').innerHTML=principles.map((p,i)=>`<div class="pe-row"><input type="text" value="${p.name}" placeholder="Name" oninput="updateP(${i},'name',this.value)"/><textarea rows="3" oninput="updateP(${i},'desc',this.value)">${p.desc}</textarea></div>`).join('');}
-function updateP(i,f,v){principles[i][f]=v;renderStrip();renderPEGrid();}
-function togglePE(){peOpen=!peOpen;document.getElementById('peExpanded').style.display=peOpen?'flex':'none';document.getElementById('peGrid').style.display=peOpen?'none':'grid';document.getElementById('peToggleBtn').textContent=peOpen?'Done':'Edit';if(peOpen)renderPEExpanded();}
-function resetPE(){principles=JSON.parse(JSON.stringify(DEFAULTS));renderStrip();renderPEGrid();if(peOpen)renderPEExpanded();}
+// ── Principles rendering ──────────────────────────────────────────
+function renderStrip(){
+  document.getElementById('pStrip').innerHTML = principles.map(p=>`
+    <div class="p-chip">
+      <div class="p-chip-name">${p.name}</div>
+      <div class="p-chip-desc">${p.desc}</div>
+    </div>`).join('');
+}
+ 
+function renderPEGrid(){
+  document.getElementById('peGrid').innerHTML = principles.map(p=>`
+    <div class="pe-mini">
+      <div class="pe-mini-name">${p.name}</div>
+      <div class="pe-mini-desc">${p.desc}</div>
+    </div>`).join('');
+}
+ 
+function renderPEExpanded(){
+  document.getElementById('peExpanded').innerHTML = principles.map((p,i)=>`
+    <div class="pe-item">
+      <div class="pe-item-header">
+        <span class="pe-item-num">${i+1}</span>
+        <div class="pe-item-name">
+          <input type="text" value="${p.name}" placeholder="Principle name"
+            oninput="updateP(${i},'name',this.value)"/>
+        </div>
+        <div class="pe-item-actions">
+          <button class="btn-icon" title="Move up" onclick="moveP(${i},-1)" ${i===0?'disabled style="opacity:.3"':''}>↑</button>
+          <button class="btn-icon" title="Move down" onclick="moveP(${i},1)" ${i===principles.length-1?'disabled style="opacity:.3"':''}>↓</button>
+          <button class="btn-icon danger" title="Delete" onclick="deleteP(${i})">✕</button>
+        </div>
+      </div>
+      <textarea rows="3" oninput="updateP(${i},'desc',this.value)"
+        placeholder="Describe what this principle scores…">${p.desc}</textarea>
+    </div>`).join('') +
+    `<button class="pe-add" onclick="addP()">+ Add new principle</button>`;
+}
+ 
+function updateP(i,f,v){ principles[i][f]=v; renderStrip(); renderPEGrid(); }
+function moveP(i,dir){
+  const j=i+dir;
+  if(j<0||j>=principles.length)return;
+  [principles[i],principles[j]]=[principles[j],principles[i]];
+  renderStrip(); renderPEGrid(); renderPEExpanded();
+}
+function deleteP(i){
+  if(principles.length<=1){alert('You need at least one principle.');return;}
+  principles.splice(i,1);
+  renderStrip(); renderPEGrid(); renderPEExpanded();
+}
+function addP(){
+  principles.push({id:'p_'+Date.now(),name:'New principle',icon:'list',desc:'Describe what this principle scores.'});
+  renderStrip(); renderPEGrid(); renderPEExpanded();
+  // Scroll to new item
+  setTimeout(()=>{const items=document.querySelectorAll('.pe-item');if(items.length)items[items.length-1].scrollIntoView({behavior:'smooth',block:'nearest'});},50);
+}
+function togglePE(){
+  peOpen=!peOpen;
+  document.getElementById('peExpanded').style.display=peOpen?'flex':'none';
+  document.getElementById('peGrid').style.display=peOpen?'none':'grid';
+  document.getElementById('peToggleBtn').textContent=peOpen?'Done':'Edit';
+  if(peOpen)renderPEExpanded();
+}
+function resetPE(){
+  principles=JSON.parse(JSON.stringify(DEFAULT_PRINCIPLES));
+  renderStrip(); renderPEGrid(); if(peOpen)renderPEExpanded();
+}
+ 
+// ── Scoring bands rendering ───────────────────────────────────────
+function renderScaleStrip(){
+  document.getElementById('scaleStrip').innerHTML = bands.map((b,i)=>{
+    const c=bandStyle(b);
+    const prev=bands[i-1]?.max||0;
+    const rangeText = i===0 ? `0 – ${b.max}` : `${prev+1} – ${b.max}`;
+    return`<div class="scale-chip" style="background:${c.bg};border-color:${c.border}">
+      <div class="scale-chip-range" style="color:${c.text}">${rangeText}</div>
+      <div class="scale-chip-label" style="color:${c.text}">${b.label}</div>
+    </div>`;
+  }).join('');
+}
+ 
+function renderBandsGrid(){
+  document.getElementById('bandsGrid').innerHTML = bands.map((b,i)=>{
+    const c=bandStyle(b);
+    const prev=bands[i-1]?.max||0;
+    const rangeText = i===0 ? `0 – ${b.max}` : `${prev+1} – ${b.max}`;
+    return`<div class="band-mini" style="background:${c.bg};border-color:${c.border}">
+      <div class="band-mini-range" style="color:${c.text}">${rangeText}</div>
+      <div class="band-mini-label" style="color:${c.text}">${b.label}</div>
+    </div>`;
+  }).join('');
+}
+ 
+function renderBandsExpanded(){
+  document.getElementById('bandsExpanded').innerHTML = bands.map((b,i)=>{
+    const c=bandStyle(b);
+    const prev=i===0?0:bands[i-1].max;
+    const isLast=i===bands.length-1;
+    return`<div class="band-item">
+      <div class="band-item-color" style="background:${c.dot}"></div>
+      <div class="band-item-range">
+        <span style="color:var(--ghost);font-size:12px">${prev+1} –</span>
+        ${isLast
+          ? `<span style="font-size:13px;font-weight:500;color:var(--muted)">100</span>`
+          : `<input type="number" min="${prev+2}" max="99" value="${b.max}"
+              oninput="updateBandMax(${i},this.value)"
+              style="width:60px" title="Upper threshold for this band"/>`
+        }
+      </div>
+      <div class="band-item-label">
+        <input type="text" value="${b.label}" placeholder="Band label"
+          oninput="updateBandLabel(${i},this.value)"/>
+      </div>
+    </div>`;
+  }).join('');
+}
+ 
+function updateBandMax(i,v){
+  const val=parseInt(v);
+  if(isNaN(val)||val<1||val>99)return;
+  bands[i].max=val;
+  // Ensure bands are still ordered — clamp next band if needed
+  if(i+1<bands.length-1 && bands[i+1].max<=val) bands[i+1].max=val+1;
+  renderScaleStrip(); renderBandsGrid(); renderBandsExpanded();
+}
+function updateBandLabel(i,v){
+  bands[i].label=v;
+  renderScaleStrip(); renderBandsGrid();
+}
+function toggleBands(){
+  bandsOpen=!bandsOpen;
+  document.getElementById('bandsExpanded').style.display=bandsOpen?'flex':'none';
+  document.getElementById('bandsGrid').style.display=bandsOpen?'none':'grid';
+  document.getElementById('bandsToggleBtn').textContent=bandsOpen?'Done':'Edit';
+  if(bandsOpen)renderBandsExpanded();
+}
+function resetBands(){
+  bands=JSON.parse(JSON.stringify(DEFAULT_BANDS));
+  renderScaleStrip(); renderBandsGrid(); if(bandsOpen)renderBandsExpanded();
+}
  
 // ── Tabs ──────────────────────────────────────────────────────────
 function switchTab(t){
@@ -370,7 +537,7 @@ function clearStatus(){document.getElementById('status').style.display='none';}
  
 // ── Validate common fields ────────────────────────────────────────
 function validateCommon(){
-  const workerUrl=document.getElementById('workerUrl').value.trim();
+  const workerUrl=document.getElementById('workerUrl').value.trim().replace(/\/$/,'');
   const audience=document.getElementById('audience').value.trim();
   let ok=true;
   [{id:'workerUrl',v:workerUrl},{id:'audience',v:audience}].forEach(({id,v})=>{
@@ -378,6 +545,14 @@ function validateCommon(){
   });
   if(!ok){setStatus('Please fill in the Worker URL and intended audience.','err');return null;}
   return{workerUrl,audience};
+}
+ 
+// ── Build system prompt (sent to worker) ──────────────────────────
+function buildBandDescription(){
+  return bands.map((b,i)=>{
+    const prev=i===0?0:bands[i-1].max;
+    return `${prev+1}–${b.max}: ${b.label}`;
+  }).join('\n');
 }
  
 // ── Single URL ────────────────────────────────────────────────────
@@ -393,7 +568,7 @@ async function runSingle(){
     const resp=await fetch(common.workerUrl+'/score',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({url,audience:common.audience,principles})
+      body:JSON.stringify({url,audience:common.audience,principles,bandDescription:buildBandDescription()})
     });
     const data=await resp.json();
     if(data.error)throw new Error(data.error);
@@ -412,63 +587,49 @@ async function runBatch(){
   if(!raw){document.getElementById('batchUrls').classList.add('err');setStatus('Please enter at least one URL.','err');return;}
   const urls=raw.split('\n').map(u=>u.trim()).filter(u=>u.startsWith('http'));
   if(!urls.length){setStatus('No valid URLs found. Each URL must start with http.','err');return;}
- 
   document.getElementById('scoreBatchBtn').disabled=true;
   document.getElementById('batchResults').style.display='none';
   batchData=[];
- 
-  // Build progress list
   const pl=document.getElementById('progressList');
   pl.innerHTML=urls.map((u,i)=>`<div class="progress-item" id="pi-${i}">
     <span class="pi-url">${u}</span>
     <span class="pi-status pi-waiting" id="pis-${i}">Waiting</span>
   </div>`).join('');
- 
   setStatus(`<span class="spin"></span>Scoring ${urls.length} URL${urls.length>1?'s':''}…`,'info');
- 
   try{
     const resp=await fetch(common.workerUrl+'/batch',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({urls,audience:common.audience,principles})
+      body:JSON.stringify({urls,audience:common.audience,principles,bandDescription:buildBandDescription()})
     });
     if(!resp.ok)throw new Error(`Worker returned ${resp.status}`);
- 
     const reader=resp.body.getReader();
     const dec=new TextDecoder();
     let buf='';
- 
-    // Mark first as running
-    document.getElementById(`pis-0`).className='pi-status pi-running';
-    document.getElementById(`pis-0`).textContent='Scoring…';
- 
+    const pis0=document.getElementById('pis-0');
+    if(pis0){pis0.className='pi-status pi-running';pis0.textContent='Scoring…';}
     while(true){
       const{done,value}=await reader.read();
       if(done)break;
       buf+=dec.decode(value,{stream:true});
-      const lines=buf.split('\n');
-      buf=lines.pop();
+      const lines=buf.split('\n');buf=lines.pop();
       for(const line of lines){
         if(!line.trim())continue;
         try{
           const item=JSON.parse(line);
           const pis=document.getElementById(`pis-${item.index}`);
           if(item.status==='ok'){
-            pis.className='pi-status pi-done';
-            pis.textContent=`${item.overall_score} — ${item.overall_band}`;
+            if(pis){pis.className='pi-status pi-done';pis.textContent=`${item.overall_score} — ${item.overall_band}`;}
             batchData.push(item);
-          } else {
-            pis.className='pi-status pi-error';
-            pis.textContent=`Error: ${item.error}`;
+          }else{
+            if(pis){pis.className='pi-status pi-error';pis.textContent=`Error: ${item.error}`;}
             batchData.push({...item,overall_score:'—',overall_band:'Error'});
           }
-          // Mark next as running
           const next=document.getElementById(`pis-${item.index+1}`);
           if(next){next.className='pi-status pi-running';next.textContent='Scoring…';}
         }catch(e){console.error('Parse error',e,line);}
       }
     }
- 
     clearStatus();
     renderBatch(batchData,common.audience);
   }catch(e){
@@ -480,17 +641,43 @@ async function runBatch(){
 // ── Render single result ──────────────────────────────────────────
 function renderSingle(a,aud){
   const ob=band(a.overall_score);
+  const oc=bandStyle(ob);
   document.getElementById('resUrl').innerHTML=a.url?`<a href="${a.url}" target="_blank">${a.url}</a>`:'';
   document.getElementById('resTitle').textContent=a.title||'Untitled page';
   document.getElementById('resAudience').innerHTML=`${SVG.person}<span><strong>Scored for:</strong> ${aud}</span>`;
   const badge=document.getElementById('overallBadge');
-  badge.className=`overall-badge bg-${ob.cls}`;
-  badge.innerHTML=`<div class="ob-score c-${ob.cls}">${a.overall_score}</div><div class="ob-label c-${ob.cls}">${ob.label}</div>`;
+  badge.className='overall-badge';
+  badge.style.cssText=`background:${oc.bg};border-color:${oc.border}`;
+  badge.innerHTML=`<div class="ob-score" style="color:${oc.text}">${a.overall_score}</div><div class="ob-label" style="color:${oc.text}">${ob.label}</div>`;
   const iconMap=Object.fromEntries(principles.map(p=>[p.id,p.icon]));
-  document.getElementById('scoreGrid').innerHTML=(a.dimensions||[]).map(d=>{const b=band(d.score);return`<div class="sc"><div class="sc-label">${d.name}</div><div class="sc-num c-${b.cls}">${d.score}</div><div class="sc-band c-${b.cls}">${b.label}</div></div>`;}).join('');
+  document.getElementById('scoreGrid').innerHTML=(a.dimensions||[]).map(d=>{
+    const b=band(d.score);const bc=bandStyle(b);
+    return`<div class="sc">
+      <div class="sc-label">${d.name}</div>
+      <div class="sc-num" style="color:${bc.text}">${d.score}</div>
+      <div class="sc-band" style="color:${bc.text}">${b.label}</div>
+    </div>`;
+  }).join('');
   document.getElementById('dimCards').innerHTML=(a.dimensions||[]).map(d=>{
-    const b=band(d.score);const icon=SVG[iconMap[d.principle]]||SVG.list;
-    return`<div class="dim"><div class="dim-head"><div class="dim-icon icon-${b.cls}">${icon}</div><div class="dim-name">${d.name}</div><div class="dim-badge bg-${b.cls} c-${b.cls}">${d.score}/100</div></div><div class="bar-track"><div class="bar-fill bar-${b.cls}" style="width:${Math.max(2,d.score)}%"></div></div><div class="dim-score-row"><span class="dim-score-num c-${b.cls}">${d.score}</span><span class="dim-score-band bg-${b.cls} c-${b.cls}">${b.label}</span></div><div class="dim-section"><div class="dim-section-label">Commentary</div><div class="dim-commentary">${d.commentary||''}</div></div><div class="dim-suggestion">${SVG.bulb}<span>${d.suggestion}</span></div></div>`;
+    const b=band(d.score);const bc=bandStyle(b);
+    const icon=SVG[iconMap[d.principle]]||SVG.list;
+    return`<div class="dim">
+      <div class="dim-head">
+        <div class="dim-icon" style="background:${bc.bg};color:${bc.text}">${icon}</div>
+        <div class="dim-name">${d.name}</div>
+        <div class="dim-badge" style="background:${bc.bg};border-color:${bc.border};color:${bc.text}">${d.score}/100</div>
+      </div>
+      <div class="bar-track"><div class="bar-fill" style="width:${Math.max(2,d.score)}%;background:${bc.dot}"></div></div>
+      <div class="dim-score-row">
+        <span class="dim-score-num" style="color:${bc.text}">${d.score}</span>
+        <span class="dim-score-band" style="background:${bc.bg};border-color:${bc.border};color:${bc.text}">${b.label}</span>
+      </div>
+      <div class="dim-section">
+        <div class="dim-section-label">Commentary</div>
+        <div class="dim-commentary">${d.commentary||''}</div>
+      </div>
+      <div class="dim-suggestion">${SVG.bulb}<span>${d.suggestion}</span></div>
+    </div>`;
   }).join('');
   document.getElementById('recText').textContent=a.recommendation||'';
   document.getElementById('formCard').style.display='none';
@@ -501,28 +688,25 @@ function renderSingle(a,aud){
 // ── Render batch results ──────────────────────────────────────────
 function renderBatch(data,aud){
   const dimNames=principles.map(p=>p.name);
-  // Rebuild the entire table header safely
-  const thead=document.querySelector('.batch-table thead tr');
-  thead.innerHTML=`<th>URL</th><th>Title</th><th>Overall</th><th>Band</th>`+dimNames.map(n=>`<th>${n}</th>`).join('');
- 
+  document.getElementById('batchThead').innerHTML=
+    '<th>URL</th><th>Title</th><th>Overall</th><th>Band</th>'+dimNames.map(n=>`<th>${n}</th>`).join('');
   document.getElementById('batchTableBody').innerHTML=data.map(item=>{
     if(item.status==='error'){
       return`<tr><td colspan="${4+dimNames.length}" style="color:var(--rose)"><a class="batch-url" href="${item.url}" target="_blank">${item.url}</a> — ${item.error}</td></tr>`;
     }
-    const ob=band(item.overall_score);
+    const ob=band(item.overall_score);const oc=bandStyle(ob);
     const dimCells=(item.dimensions||[]).map(d=>{
-      const b=band(d.score);
-      return`<td class="c-${b.cls}" style="font-weight:500;white-space:nowrap">${d.score}</td>`;
+      const b=band(d.score);const bc=bandStyle(b);
+      return`<td style="font-weight:500;white-space:nowrap;color:${bc.text}">${d.score}</td>`;
     }).join('');
     return`<tr>
       <td><a class="batch-url" href="${item.url}" target="_blank">${item.url}</a></td>
       <td style="font-size:13px">${item.title||''}</td>
-      <td class="c-${ob.cls}" style="font-weight:500;font-family:var(--serif);font-size:1.1rem">${item.overall_score}</td>
-      <td><span class="dim-score-band bg-${ob.cls} c-${ob.cls}" style="font-size:11px;padding:2px 8px;border-radius:20px;border:1px solid;white-space:nowrap">${ob.label}</span></td>
+      <td style="font-weight:500;font-family:var(--serif);font-size:1.1rem;color:${oc.text}">${item.overall_score}</td>
+      <td><span style="font-size:11px;padding:2px 8px;border-radius:20px;border:1px solid;white-space:nowrap;background:${oc.bg};border-color:${oc.border};color:${oc.text}">${ob.label}</span></td>
       ${dimCells}
     </tr>`;
   }).join('');
- 
   document.getElementById('formCard').style.display='none';
   document.getElementById('batchResults').style.display='block';
   window.scrollTo({top:0,behavior:'smooth'});
@@ -541,15 +725,14 @@ function downloadCSV(){
   const csv=[headers,...rows].map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
   const blob=new Blob([csv],{type:'text/csv'});
   const a=document.createElement('a');
-  a.href=URL.createObjectURL(blob);
-  a.download='editorial-scores.csv';
-  a.click();
+  a.href=URL.createObjectURL(blob);a.download='editorial-scores.csv';a.click();
 }
  
 function resetResults(){document.getElementById('results').style.display='none';document.getElementById('formCard').style.display='block';window.scrollTo({top:0,behavior:'smooth'});}
 function resetBatch(){document.getElementById('batchResults').style.display='none';document.getElementById('formCard').style.display='block';document.getElementById('progressList').innerHTML='';window.scrollTo({top:0,behavior:'smooth'});}
  
-renderStrip();renderPEGrid();
+// ── Init ──────────────────────────────────────────────────────────
+renderStrip();renderPEGrid();renderScaleStrip();renderBandsGrid();
 </script>
 </body>
 </html>
